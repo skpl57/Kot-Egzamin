@@ -18,7 +18,7 @@
         android:text="Galeria" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/idImg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
@@ -31,12 +31,12 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/idPrev"
             android:backgroundTint="#004C40"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Prev" />
 
         <Space
             android:layout_width="wrap_content"
@@ -44,12 +44,12 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/idNext"
             android:layout_width="wrap_content"
             android:backgroundTint="#004C40"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Next" />
 
     </LinearLayout>
 
@@ -59,7 +59,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/idKtoryObraz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#004C40"
@@ -71,7 +71,7 @@
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/idNumer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -80,7 +80,8 @@
     </LinearLayout>
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/idTlo"
+        android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#004C40"
@@ -92,12 +93,13 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/idAutor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
+        android:textSize="16sp"
         android:background="#004C40"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:text="Autor: 00000000000" />
 
 </LinearLayout>
