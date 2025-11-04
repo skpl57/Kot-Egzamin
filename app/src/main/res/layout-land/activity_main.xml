@@ -20,7 +20,7 @@
     <ImageView
         android:id="@+id/idImg"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="160dp"
         android:layout_gravity="center"
         app:srcCompat="@drawable/szczur" />
 
