@@ -1,6 +1,8 @@
 package com.example.galeria_sk;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -68,6 +70,29 @@ public class MainActivity extends AppCompatActivity {
                             numerZdjecia = obrazy.size() - 1;
                         }
                         zdjecie.setImageResource(obrazy.get(numerZdjecia));
+                    }
+                }
+        );
+        inputText.addTextChangedListener(
+                new TextWatcher() {
+                    @Override
+                    public void afterTextChanged(Editable editable) {
+
+                    }
+
+                    @Override
+                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                        if(!String.valueOf(inputText.getText()).equals("")){
+                            if(Integer.parseInt(String.valueOf(inputText.getText())) < obrazy.size()){
+                                numerZdjecia = Integer.parseInt(String.valueOf(inputText.getText()));
+                                zdjecie.setImageResource(obrazy.get(numerZdjecia));
+                            }
+                        }
                     }
                 }
         );
