@@ -5,11 +5,13 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -44,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
         Button next = findViewById(R.id.idNext);
         Button prev = findViewById(R.id.idPrev);
 
+
+        if(savedInstanceState != null){
+            numerZdjecia = savedInstanceState.getInt("NUMER");
+            zdjecie.setImageResource(obrazy.get(numerZdjecia));
+        }
 
         next.setOnClickListener(
                 new View.OnClickListener() {
@@ -96,5 +103,27 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        przelacznik.setOnCheckedChangeListener(
+                new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(@NonNull CompoundButton compoundButton, boolean b) {
+                        if(b){
+                            findViewById(R.id.main).setBackgroundColor(getColor(R.color.blue));
+                        }
+                        else{
+                            findViewById(R.id.main).setBackgroundColor(getColor(R.color.green));
+
+                        }
+                    }
+                }
+        );
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("NUMER", numerZdjecia);
     }
 }
